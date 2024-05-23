@@ -1,0 +1,12 @@
+// See https://containers.dev/implementors/json_reference/ for configuration reference
+{
+	"name": "LabelStudio",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"postCreateCommand": "npm install",
+	"remoteUser": "root",
+	"mounts": [
+		"source=${localWorkspaceFolderBasename}_node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+	]
+}
